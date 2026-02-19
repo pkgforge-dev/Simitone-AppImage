@@ -32,10 +32,10 @@ echo "$VERSION" > ~/version
 
 mkdir -p ./AppDir/bin
 cd ./Simitone
-find . -name "*.csproj" -exec sed -i 's/<TargetFramework>.*<\/TargetFramework>/<TargetFramework>net10.0<\/TargetFramework>/g' {} +
-find . -name "*.csproj" -exec sed -i 's/Microsoft.NET.Sdk.WindowsDesktop/Microsoft.NET.Sdk/g' {} +
-#find . -name "*.csproj" -exec sed -i 's/Version=v9.0/Version=v4.7.2/g' {} +
-#find . -name "*.csproj" -exec sed -i 's/<TargetFrameworkVersion>v9.0<\/TargetFrameworkVersion>/<TargetFrameworkVersion>v4.7.2<\/TargetFrameworkVersion>/g' {} +
+find . -name "*.csproj" -exec sed -i 's/<UseWindowsForms>true<\/UseWindowsForms>/<UseWindowsForms>false<\/UseWindowsForms>/g' {} +
+find . -name "*.csproj" -exec sed -i 's/<UseWPF>true<\/UseWPF>/<UseWPF>false<\/UseWPF>/g' {} +
+find . -name "*.csproj" -exec sed -i 's/<OutputType>WinExe<\/OutputType>/<OutputType>Library<\/OutputType>/g' {} +
+sed -i 's/ReadOnlySpan<byte>/Span<byte>/g' FreeSO/TSOClient/tso.simantics/NetPlay/Model/VMSerializable.cs
 cd Client/Simitone
 #msbuild Simitone.sln /p:Configuration=Release
 dotnet build Simitone.sln -c Release
