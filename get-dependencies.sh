@@ -38,6 +38,9 @@ find . -name "*.csproj" -exec sed -i 's/<OutputType>WinExe<\/OutputType>/<Output
 sed -i 's/ReadOnlySpan<byte>/Span<byte>/g' FreeSO/TSOClient/tso.simantics/NetPlay/Model/VMSerializable.cs
 cd Client/Simitone
 #msbuild Simitone.sln /p:Configuration=Release
+sed -i '/FSO.IDE/d' Simitone.sln
+sed -i '/Simitone.Windows/d' Simitone.sln
+sed -i '/FSO.Windows/d' Simitone.sln
 dotnet build Simitone.sln -c Release
 mv -v bin/Release/* ../../../AppDir/bin
 
