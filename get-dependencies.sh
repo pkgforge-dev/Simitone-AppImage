@@ -32,8 +32,11 @@ echo "$VERSION" > ~/version
 
 mkdir -p ./AppDir/bin
 cd ./Simitone
-find . -name "*.csproj" -exec sed -i 's/Version=v9.0/Version=v4.7.2/g' {} +
-find . -name "*.csproj" -exec sed -i 's/<TargetFrameworkVersion>v9.0<\/TargetFrameworkVersion>/<TargetFrameworkVersion>v4.7.2<\/TargetFrameworkVersion>/g' {} +
+find . -name "*.csproj" -exec sed -i 's/net9.0-windows/net9.0/g' {} +
+find . -name "*.csproj" -exec sed -i '/<RuntimeIdentifier>win-x64<\/RuntimeIdentifier>/d' {} +
+find . -name "*.csproj" -exec sed -i 's/<TargetFrameworkVersion>v9.0<\/TargetFrameworkVersion>/<TargetFramework>net9.0<\/TargetFramework>/g' {} +
+#find . -name "*.csproj" -exec sed -i 's/Version=v9.0/Version=v4.7.2/g' {} +
+#find . -name "*.csproj" -exec sed -i 's/<TargetFrameworkVersion>v9.0<\/TargetFrameworkVersion>/<TargetFrameworkVersion>v4.7.2<\/TargetFrameworkVersion>/g' {} +
 cd Client/Simitone
 msbuild Simitone.sln /p:Configuration=Release
 mv -v bin/Release/* ../../../AppDir/bin
