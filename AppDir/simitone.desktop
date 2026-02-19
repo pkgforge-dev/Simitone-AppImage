@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Simitone
+Comment=The Sims 1 recreation using FreeSO engine
+Exec=Simitone
+Icon=Simitone
+StartupWMClass=
+Terminal=false
+Categories=Game;Simulation;
+Keywords=sims;simulation;freeso;
+StartupNotify=true
