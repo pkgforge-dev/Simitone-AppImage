@@ -29,7 +29,7 @@ if [ "$ARCH" = "x86_64" ]; then
     wget https://github.com/alexjyong/Simitone/releases/download/v0.8.20-forked/Simitone-Linux-x64-Release.zip
 
     mkdir -p ./AppDir/bin
-    bsdtar -xvf Simitone-Linux-x64-Release.zip -o ./AppDir/bin
+    bsdtar -xvf Simitone-Linux-x64-Release.zip -C ./AppDir/bin
     rm -rf ./AppDir/bin/simitone.desktop
 else
     echo "Making nightly build of Simitone..."
