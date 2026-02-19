@@ -31,7 +31,10 @@ git clone --recursive --depth 1 "$REPO" ./Simitone
 echo "$VERSION" > ~/version
 
 mkdir -p ./AppDir/bin
-cd ./Simitone/Client/Simitone
+cd ./Simitone
+find . -name "*.csproj" -exec sed -i 's/Version=v9.0/Version=v4.7.2/g' {} +
+find . -name "*.csproj" -exec sed -i 's/<TargetFrameworkVersion>v9.0<\/TargetFrameworkVersion>/<TargetFrameworkVersion>v4.7.2<\/TargetFrameworkVersion>/g' {} +
+cd Client/Simitone
 msbuild Simitone.sln /p:Configuration=Release
 mv -v bin/Release/* ../../../AppDir/bin
 
