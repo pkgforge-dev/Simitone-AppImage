@@ -29,7 +29,7 @@ echo "$VERSION" > ~/version
 
 mkdir -p ./AppDir/bin
 cd ./Simitone/Client/Simitone
-xbuild Simitone.sln /p:Configuration=Release
+msbuild Simitone.sln /p:Configuration=Release
 mv -v bin/Release/* ../../../AppDir/bin
 
 # if you also have to make nightly releases check for DEVEL_RELEASE = 1
