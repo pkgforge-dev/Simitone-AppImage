@@ -9,10 +9,10 @@ echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
     libdecor    \
     xmlstarlet  \
-    mono        \
     openal      \
     sdl2        \
     unzip
+    #mono        \
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
@@ -20,7 +20,7 @@ get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
 make-aur-package dotnet-core-bin
-make-aur-package mono-msbuild-git
+#make-aur-package mono-msbuild-git
 
 # If the application needs to be manually built that has to be done down here
 echo "Making nightly build of Simitone..."
@@ -32,13 +32,13 @@ echo "$VERSION" > ~/version
 
 mkdir -p ./AppDir/bin
 cd ./Simitone
-find . -name "*.csproj" -exec sed -i 's/net9.0-windows/net9.0/g' {} +
-find . -name "*.csproj" -exec sed -i '/<RuntimeIdentifier>win-x64<\/RuntimeIdentifier>/d' {} +
-find . -name "*.csproj" -exec sed -i 's/<TargetFrameworkVersion>v9.0<\/TargetFrameworkVersion>/<TargetFramework>net9.0<\/TargetFramework>/g' {} +
+find . -name "*.csproj" -exec sed -i 's/<TargetFramework>.*<\/TargetFramework>/<TargetFramework>net10.0<\/TargetFramework>/g' {} +
+find . -name "*.csproj" -exec sed -i 's/Microsoft.NET.Sdk.WindowsDesktop/Microsoft.NET.Sdk/g' {} +
 #find . -name "*.csproj" -exec sed -i 's/Version=v9.0/Version=v4.7.2/g' {} +
 #find . -name "*.csproj" -exec sed -i 's/<TargetFrameworkVersion>v9.0<\/TargetFrameworkVersion>/<TargetFrameworkVersion>v4.7.2<\/TargetFrameworkVersion>/g' {} +
 cd Client/Simitone
-msbuild Simitone.sln /p:Configuration=Release
+#msbuild Simitone.sln /p:Configuration=Release
+dotnet build Simitone.sln -c Release
 mv -v bin/Release/* ../../../AppDir/bin
 
 # if you also have to make nightly releases check for DEVEL_RELEASE = 1
