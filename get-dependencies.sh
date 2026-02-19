@@ -8,6 +8,7 @@ echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
     libdecor    \
+    libgdiplus  \
     xmlstarlet  \
     openal      \
     sdl2        \
