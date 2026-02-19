@@ -26,7 +26,9 @@ get-debloated-pkgs --add-common --prefer-nano
 # If the application needs to be manually built that has to be done down here
 if [ "$ARCH" = "x86_64" ]; then
     make-aur-package dotnet-core-9.0-bin
-    wget https://github.com/alexjyong/Simitone/releases/download/v0.8.20-forked/Simitone-Linux-x64-Release.zip
+    VERSION=0.8.20-forked
+    echo "$VERSION" > ~/version
+    wget https://github.com/alexjyong/Simitone/releases/download/v$VERSION/Simitone-Linux-x64-Release.zip
 
     mkdir -p ./AppDir/bin
     bsdtar -xvf Simitone-Linux-x64-Release.zip -C ./AppDir/bin
