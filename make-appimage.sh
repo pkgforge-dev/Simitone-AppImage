@@ -11,7 +11,7 @@ export ICON=DUMMY
 export DESKTOP=DUMMY
 
 # Deploy dependencies
-quick-sharun mono ./AppDir/bin/*
+quick-sharun ./AppDir/bin/*
 
 # Additional changes can be done in between here
 
