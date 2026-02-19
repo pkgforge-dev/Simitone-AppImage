@@ -13,7 +13,7 @@
 
 | Latest Nightly Release | Upstream URL |
 | :---: | :---: |
-| [Click here](https://github.com/pkgforge-dev/Simitone-AppImage/releases/latest) | [Click here](https://github.com/riperiperi/Simitone) |
+| [Click here](https://github.com/pkgforge-dev/Simitone-AppImage/releases/latest) | [Click here](https://github.com/alexjyong/Simitone) |
 
 </div>
 
