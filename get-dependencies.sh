@@ -7,10 +7,9 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    libdecor     \
-    mono         \
-    mono-msbuild \
-    openal       \
+    libdecor \
+    mono     \
+    openal   \
     sdl2
 
 echo "Installing debloated packages..."
@@ -30,8 +29,8 @@ echo "$VERSION" > ~/version
 
 mkdir -p ./AppDir/bin
 cd ./Simitone/Client/Simitone
-msbuild Simitone.sln /p:Configuration=Release
-mv -v bin/Release/Simitone.Windows.exe ../../../AppDir/bin
+xbuild Simitone.sln /p:Configuration=Release
+mv -v bin/Release/* ../../../AppDir/bin
 
 # if you also have to make nightly releases check for DEVEL_RELEASE = 1
 #
