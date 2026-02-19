@@ -33,16 +33,16 @@ echo "$VERSION" > ~/version
 
 mkdir -p ./AppDir/bin
 cd ./Simitone
-find . -name "*.csproj" -exec sed -i 's/<UseWindowsForms>true<\/UseWindowsForms>/<UseWindowsForms>false<\/UseWindowsForms>/g' {} +
-find . -name "*.csproj" -exec sed -i 's/<UseWPF>true<\/UseWPF>/<UseWPF>false<\/UseWPF>/g' {} +
+find . -name "*.csproj" -exec sed -i '/<\/PropertyGroup>/i \    <PackageReference Include="System.Drawing.Common" Version="9.0.0" />\n    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>' {} +
+find . -name "*.csproj" -exec sed -i '/<\/PropertyGroup>/i \    <RuntimeHostConfigurationOption Include="System.Drawing.EnableUnixSupport" Value="true" />' {} +
+find . -name "*.csproj" -exec sed -i 's/Microsoft.NET.Sdk.WindowsDesktop/Microsoft.NET.Sdk/g' {} +
 find . -name "*.csproj" -exec sed -i 's/<OutputType>WinExe<\/OutputType>/<OutputType>Library<\/OutputType>/g' {} +
-sed -i 's/ReadOnlySpan<byte>/Span<byte>/g' FreeSO/TSOClient/tso.simantics/NetPlay/Model/VMSerializable.cs
 cd Client/Simitone
-#msbuild Simitone.sln /p:Configuration=Release
 sed -i '/FSO.IDE/d' Simitone.sln
 sed -i '/Simitone.Windows/d' Simitone.sln
 sed -i '/FSO.Windows/d' Simitone.sln
-dotnet build Simitone.sln -c Release
+dotnet restore Simitone.sln
+dotnet build Simitone.sln -c Release --no-restore
 mv -v bin/Release/* ../../../AppDir/bin
 
 # if you also have to make nightly releases check for DEVEL_RELEASE = 1
