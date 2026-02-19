@@ -37,6 +37,10 @@ cd ./Simitone
 find . -name "*.csproj" -exec sed -i '/<\/PropertyGroup>/i \    <EnableWindowsTargeting>true</EnableWindowsTargeting>' {} +
 find . -name "*.csproj" -exec sed -i 's/net[0-9].0-windows/net10.0/g' {} +
 find . -name "*.csproj" -exec sed -i 's/Microsoft.NET.Sdk.WindowsDesktop/Microsoft.NET.Sdk/g' {} +
+find . -name "*.csproj" -exec sed -i 's/<UseWindowsForms>true<\/UseWindowsForms>/<UseWindowsForms>false<\/UseWindowsForms>/g' {} +
+find . -name "*.csproj" -exec sed -i 's/<UseWPF>true<\/UseWPF>/<UseWPF>false<\/UseWPF>/g' {} +
+find . -name "*.csproj" -exec sed -i 's/Microsoft.NET.Sdk.WindowsDesktop/Microsoft.NET.Sdk/g' {} +
+find . -name "*.csproj" -exec sed -i 's/<OutputType>WinExe<\/OutputType>/<OutputType>Library<\/OutputType>/g' {} +
 #find . -name "*.csproj" -exec sed -i '/<\/PropertyGroup>/i \    <PackageReference Include="System.Drawing.Common" Version="9.0.0" />\n    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>' {} +
 #find . -name "*.csproj" -exec sed -i '/<\/PropertyGroup>/i \    <RuntimeHostConfigurationOption Include="System.Drawing.EnableUnixSupport" Value="true" />' {} +
 #find . -name "*.csproj" -exec sed -i 's/Microsoft.NET.Sdk.WindowsDesktop/Microsoft.NET.Sdk/g' {} +
