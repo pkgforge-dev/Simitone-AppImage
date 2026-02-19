@@ -7,8 +7,6 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    dotnet-host \
-    dotnet-sdk  \
     libdecor    \
     xmlstarlet  \
     mono        \
@@ -21,6 +19,7 @@ echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
+make-aur-package dotnet-core-bin
 make-aur-package mono-msbuild-git
 
 # If the application needs to be manually built that has to be done down here
