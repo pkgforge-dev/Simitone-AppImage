@@ -1,6 +1,6 @@
 <div align="center">
 
-# Simitone-AppImage 🐧
+# WIP PLEASE DONT USE YETSimitone-AppImage 🐧
 
 [![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/Simitone-AppImage/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/Simitone-AppImage/releases/latest)
 [![CI Build Status](https://github.com//pkgforge-dev/Simitone-AppImage/actions/workflows/appimage.yml/badge.svg)](https://github.com/pkgforge-dev/Simitone-AppImage/releases/latest)
