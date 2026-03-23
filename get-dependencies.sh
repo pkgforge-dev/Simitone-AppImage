@@ -7,6 +7,7 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
+    dotnet-runtime-9.0 \
     libdecor    \
     libgdiplus  \
     xmlstarlet  \
