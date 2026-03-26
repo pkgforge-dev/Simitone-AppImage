@@ -33,6 +33,7 @@ if [ "$ARCH" = "x86_64" ]; then
 
     mkdir -p ./AppDir/bin
     bsdtar -xvf Simitone-Linux-x64-Release.zip -C ./AppDir/bin
+    mv -v ./AppDir/bin/Simitone ./AppDir/bin/Simlauncher
     rm -rf ./AppDir/bin/simitone.desktop
 else
     echo "Making nightly build of Simitone..."
