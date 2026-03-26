@@ -2,9 +2,9 @@
 Type=Application
 Name=Simitone
 Comment=The Sims 1 recreation using FreeSO engine
-Exec=Simitone
+Exec=Simlauncher
 Icon=Simitone
-StartupWMClass=
+StartupWMClass=Simitone
 Terminal=false
 Categories=Game;Simulation;
 Keywords=sims;simulation;freeso;
