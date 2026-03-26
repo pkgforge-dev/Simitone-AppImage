@@ -7,12 +7,12 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    dotnet-runtime-9.0 \
-    libdecor    \
-    libgdiplus  \
-    xmlstarlet  \
-    openal      \
-    sdl2        \
+    dotnet-runtime-9.0  \
+    libdecor            \
+    libgdiplus          \
+    xmlstarlet          \
+    openal              \
+    sdl2                \
     unzip
 
 echo "Installing debloated packages..."
