@@ -23,11 +23,15 @@ get-debloated-pkgs --add-common --prefer-nano
 #make-aur-package dotnet-core-9.0-bin
 
 # If the application needs to be manually built that has to be done down here
-VERSION=0.8.20-forked
-echo "$VERSION" > ~/version
-wget https://github.com/alexjyong/Simitone/releases/download/v$VERSION/Simitone-Linux-x64-Release.zip
+ZIP_LINK=$(wget https://api.github.com/repos/alexjyong/Simitone/releases -O - \
+      | sed 's/[()",{} ]/\n/g' | grep -o -m 1 "https.*Linux-x64-Release.zip")
+echo "$ZIP_LINK" | awk -F'/' '{gsub(/^v/, "", $NF); print $NF; exit}' > ~/version
+if ! wget --retry-connrefused --tries=30 "$ZIP_LINK" -O /tmp/app.zip 2>/tmp/download.log; then
+	cat /tmp/download.log
+	exit 1
+fi
 
 mkdir -p ./AppDir/bin
-bsdtar -xvf Simitone-Linux-x64-Release.zip -C ./AppDir/bin
+bsdtar -xvf /tmp/app.zip -C ./AppDir/bin
 mv -v ./AppDir/bin/Simitone ./AppDir/bin/Simlauncher
 rm -rf ./AppDir/bin/simitone.desktop
