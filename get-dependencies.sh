@@ -23,7 +23,7 @@ get-debloated-pkgs --add-common --prefer-nano
 #make-aur-package dotnet-core-9.0-bin
 
 # If the application needs to be manually built that has to be done down here
-wget https://github.com/Link4Electronics/Simitone/releases/download/v0.8.21-forked/Simitone-Linux-x64-Release.zip
+wget https://github.com/Link4Electronics/Simitone/releases/download/v0.8.21-forked/Simitone-Linux-x64-Release.zip -O /tmp/app.zip
 VERSION=0.8.21-forked
 echo "$VERSION" > ~/version
 #ZIP_LINK=$(wget https://api.github.com/repos/alexjyong/Simitone/releases -O - \
