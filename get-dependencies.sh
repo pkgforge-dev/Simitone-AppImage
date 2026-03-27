@@ -25,7 +25,7 @@ get-debloated-pkgs --add-common --prefer-nano
 # If the application needs to be manually built that has to be done down here
 ZIP_LINK=$(wget https://api.github.com/repos/alexjyong/Simitone/releases -O - \
       | sed 's/[()",{} ]/\n/g' | grep -o -m 1 "https.*Linux-x64-Release.zip")
-echo "$ZIP_LINK" | awk -F'/' '{gsub(/^v/, "", $NF); print $NF; exit}' > ~/version
+echo "$ZIP_LINK" | awk -F'/' '{tag=$(NF-1); gsub(/^v/, "", tag); print tag; exit}' > ~/version
 if ! wget --retry-connrefused --tries=30 "$ZIP_LINK" -O /tmp/app.zip 2>/tmp/download.log; then
 	cat /tmp/download.log
 	exit 1
