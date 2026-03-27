@@ -12,6 +12,8 @@ pacman -Syu --noconfirm \
     libgdiplus          \
     xmlstarlet          \
     openal              \
+    pipewire-audio      \
+    pipewire-jack       \
     sdl2                \
     unzip
 
