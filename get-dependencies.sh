@@ -36,4 +36,4 @@ fi
 mkdir -p ./AppDir/bin
 bsdtar -xvf /tmp/app.zip -C ./AppDir/bin
 mv -v ./AppDir/bin/Simitone ./AppDir/bin/Simlauncher
-rm -rf ./AppDir/bin/simitone.desktop
+rm -f ./AppDir/bin/simitone.desktop
