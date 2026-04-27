@@ -14,8 +14,7 @@ pacman -Syu --noconfirm \
     openal              \
     pipewire-audio      \
     pipewire-jack       \
-    sdl2                \
-    unzip
+    sdl2
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
