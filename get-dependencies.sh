@@ -32,7 +32,7 @@ if ! wget --retry-connrefused --tries=30 "$ZIP_LINK" -O /tmp/app.zip 2>/tmp/down
 	exit 1
 fi
 
-mkdir -p ./AppDir/bin
+mkdir -p ./AppDir/bin/lib/Content/MeshReplace
 bsdtar -xvf /tmp/app.zip -C ./AppDir/bin
 mv -v ./AppDir/bin/Simitone ./AppDir/bin/Simlauncher
 rm -f ./AppDir/bin/simitone.desktop
