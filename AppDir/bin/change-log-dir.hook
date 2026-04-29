@@ -1,0 +1,1 @@
+ln -sf "$APPDIR/bin/lib/simitone_debug.log" "/tmp/simitone_debug.log"
