@@ -10,6 +10,7 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export DEPLOY_DOTNET=1
 export DEPLOY_OPENGL=1
 export DEPLOY_PIPEWIRE=1
+export PATH_MAPPING='${SHARUN_DIR}/bin/lib/simitone_debug.log:${CACHEDIR}/simitone_debug.log'
 
 # Deploy dependencies
 quick-sharun ./AppDir/bin/Simlauncher ./AppDir/bin/lib/Simitone
