@@ -1,0 +1,4 @@
+#!/bin/sh
+dir=$HOME/Documents/Simitone
+mkdir -p "$dir"
+ln -sfn "$dir" /tmp/._Sr
