@@ -17,7 +17,6 @@ quick-sharun ./AppDir/bin/Simlauncher ./AppDir/bin/lib/Simitone
 echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}/bin' >> ./AppDir/.env
 
 # Additional changes can be done in between here
-ln -sf "$APPDIR/bin/lib/simitone_debug.log" "/tmp/simitone_debug.log"
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
