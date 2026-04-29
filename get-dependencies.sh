@@ -36,3 +36,4 @@ mkdir -p ./AppDir/bin/lib/Content/MeshReplace
 bsdtar -xvf /tmp/app.zip -C ./AppDir/bin
 mv -v ./AppDir/bin/Simitone ./AppDir/bin/Simlauncher
 rm -f ./AppDir/bin/simitone.desktop
+rm -f ./AppDir/bin/lib/*.pdb
