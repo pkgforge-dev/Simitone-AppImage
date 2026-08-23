@@ -8,7 +8,6 @@ echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
     dotnet-runtime-9.0  \
-    libdecor            \
     libgdiplus          \
     xmlstarlet          \
     openal              \
@@ -18,7 +17,7 @@ pacman -Syu --noconfirm \
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common --prefer-nano libdecor-mini
 
 echo "Getting app..."
 echo "---------------------------------------------------------------"
